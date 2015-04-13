@@ -1,4 +1,5 @@
 <?php namespace App\Http\Controllers;
+new \WP_Query;
 
 class WelcomeController extends Controller {
 
@@ -30,12 +31,24 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('main.home');
+		$query = new \WP_Query(array(
+			'post_type' => 'post',
+		));
+
+		$posts = $query->get_posts();
+
+		return view('main.home', compact('posts'));
 	}
 
 	public function about()
 	{
-		return view('main.about');
+		$query = new \WP_Query(array(
+			'post_type' => 'page',
+		));
+
+		$about = $query->get_posts();
+
+		return view('main.about', compact('about'));
 	}
 
 	public function contact()
@@ -48,5 +61,14 @@ class WelcomeController extends Controller {
 		return view('main.gallery');
 	}
 
+	public function posts()
+	{
+		$query = new \WP_Query(array(
+			'post_type' => 'post',
+		));
 
+		$posts = $query->get_posts();
+
+		return view('main.posts', compact('posts'));
+	}
 }

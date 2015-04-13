@@ -22,4 +22,5 @@ Route::get('/', 'WelcomeController@index');
 Route::get('/home', 'WelcomeController@index');
 Route::get('/about', 'WelcomeController@about');
 Route::get('/contact', 'WelcomeController@contact');
+Route::get('/posts', 'WelcomeController@posts');
 Route::get('/gallery', 'WelcomeController@gallery');

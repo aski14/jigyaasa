@@ -1,33 +1,19 @@
 @extends('welcome')
 
 @section('content')
-<section class="cd-fixed-background img-1" data-type="slider-item">
-	<div class="cd-content">
-		<h2>Title here</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolor beatae, laudantium eos fugiat, deserunt delectus quibusdam quae placeat, tempora ea? Nulla ducimus, magnam sunt repellendus modi, ad ipsam est.</p>
-	</div>
-</section>
-
-<section class="cd-fixed-background img-2" data-type="slider-item">
-	<div class="cd-content light-background">
-		<h2>Title here</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolor beatae, laudantium eos fugiat, deserunt delectus quibusdam quae placeat, tempora ea? Nulla ducimus, magnam sunt repellendus modi, ad ipsam est.</p>
-	</div>
-</section>
-
-<section class="cd-fixed-background img-3" data-type="slider-item">
-	<div class="cd-content">
-		<h2>Title here</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolor beatae, laudantium eos fugiat, deserunt delectus quibusdam quae placeat, tempora ea? Nulla ducimus, magnam sunt repellendus modi, ad ipsam est.</p>
-	</div>
-</section>
-
-<section class="cd-fixed-background img-4" data-type="slider-item">
-	<div class="cd-content">
-		<h2>Title here</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolor beatae, laudantium eos fugiat, deserunt delectus quibusdam quae placeat, tempora ea? Nulla ducimus, magnam sunt repellendus modi, ad ipsam est.</p>
-	</div>
-</section>
+	<?php $i=1; ?>
+	@foreach($posts as $post)
+		@if($i>4)
+			<?php break; ?>
+		@endif
+		<section class="cd-fixed-background img-{{ $i }}" data-type="slider-item">
+			<div class="cd-content">
+				<h2>{{ $post->post_title }}</h2>
+				<p>{!! $post->post_content !!}</p>
+			</div>
+		</section>
+		<?php $i++; ?>
+	@endforeach
 
 <nav>
 	<ul class="cd-vertical-nav">
