@@ -5,4 +5,4 @@ With a little bit of Laravel and Wordpress magic.
 
 ## Contributing
 
-To contribute contact Mriyam Tamuli (https://plus.google.com/+MriyamTamuli)
+To contribute contact [Mriyam Tamuli](https://plus.google.com/+MriyamTamuli)
