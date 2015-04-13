@@ -23,6 +23,3 @@ Route::get('/home', 'WelcomeController@index');
 Route::get('/about', 'WelcomeController@about');
 Route::get('/contact', 'WelcomeController@contact');
 Route::get('/gallery', 'WelcomeController@gallery');
-Route::get('/wordpress', function(){
-    require dirname(dirname(dirname(__FILE__))).'/wordpress/index.php';
-});
